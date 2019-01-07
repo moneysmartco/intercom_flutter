@@ -65,4 +65,8 @@ class Intercom {
   static Future<dynamic> displayHelpCenter() {
     return _channel.invokeMethod('displayHelpCenter');
   }
+
+  static Future<dynamic> setInAppMessageVisibility() {
+    return _channel.invokeMethod('setInAppMessageVisibility');
+  }
 }
