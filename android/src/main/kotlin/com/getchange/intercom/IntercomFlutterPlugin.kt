@@ -29,12 +29,12 @@ class IntercomFlutterPlugin(private val application: Application) : MethodCallHa
         result.success("Intercom initialized")
       }
       call.method == "setInAppMessageVisibility" -> {
-        val visibility = "GONE";
-        Intercom.client().setInAppMessageVisibility(Intercom.Visibility.valueOf(visibility));
+        val visibility = "GONE"
+        Intercom.client().setInAppMessageVisibility(Intercom.Visibility.valueOf(visibility))
         result.success("Intercom inapp popups disabled")
       }
       call.method == "getUnreadConversationCount" -> {
-        var count = Intercom.client().getUnreadConversationCount();
+        var count = Intercom.client().getUnreadConversationCount()
         result.success(count)
       }
       call.method == "registerIdentifiedUser" -> {
