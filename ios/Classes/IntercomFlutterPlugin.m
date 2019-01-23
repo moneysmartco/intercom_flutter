@@ -17,6 +17,14 @@
         [Intercom setApiKey:iosApiKey forAppId:appId];
         result(@"Initialized Intercom");
     }
+    else if([@"setInAppMessageVisibility" isEqualToString:call.method]) {
+        [Intercom setInAppMessagesVisible:NO];
+        result(@"Intercom inapp popups disabled");
+    }
+    else if([@"getUnreadConversationCount" isEqualToString:call.method]) {
+        NSInteger count = [Intercom unreadConversationCount];
+        result(count);
+    }
     else if([@"registerUnidentifiedUser" isEqualToString:call.method]) {
         [Intercom registerUnidentifiedUser];
         result(@"Registered unidentified user");
