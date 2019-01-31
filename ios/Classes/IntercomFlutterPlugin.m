@@ -22,8 +22,9 @@
         result(@"Intercom inapp popups disabled");
     }
     else if([@"getUnreadConversationCount" isEqualToString:call.method]) {
-        NSInteger count = [Intercom unreadConversationCount];
-        result(count);
+        int count = (int)[Intercom unreadConversationCount];
+        NSString *strFromInt = [NSString stringWithFormat:@"%d",count];
+        result(strFromInt);
     }
     else if([@"registerUnidentifiedUser" isEqualToString:call.method]) {
         [Intercom registerUnidentifiedUser];
